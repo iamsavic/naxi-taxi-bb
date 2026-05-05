@@ -32,7 +32,7 @@ export default function Navbar({ phoneNumber = "060 000 0000" }: NavbarProps) {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-gray-950/95 backdrop-blur-sm shadow-lg" : "bg-transparent"
+        scrolled ? "bg-gray-950/98 shadow-lg" : "bg-gray-950"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
