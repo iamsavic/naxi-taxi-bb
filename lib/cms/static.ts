@@ -10,12 +10,12 @@ import type {
 
 export const staticSiteSettings: SiteSettings = {
   siteName: "Naxi Taxi BB",
-  tagline: "Brz, pouzdan i uvek dostupan taxi servis u Beogradu",
-  phoneNumber: "060 123 4567",
-  viberNumber: "060 123 4567",
-  whatsappNumber: "+381601234567",
+  tagline: "Brz, pouzdan i uvek dostupan taxi servis u Bajinoj Bašti",
+  phoneNumber: "031 861 666",
+  viberNumber: "+381 60 386 1 666",
+  whatsappNumber: "+381 60 386 1 666",
   email: "info@naxitaxibb.rs",
-  address: "Bajina Bašta, Srbija",
+  address: "Račanskih Boraca 39, 31230 Bajina Bašta, Srbija",
   workingHours: "0-24h, 7 dana u nedelji",
   googleMapsUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93135.35499491073!2d20.3655!3d44.8176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7aa3d7b53fbd%3A0x1db8645cf2177ee4!2sBelgrade!5e0!3m2!1sen!2srs!4v1699999999999",
   heroTitle: "Naxi Taxi Bajina Bašta — Brz i Pouzdan",
