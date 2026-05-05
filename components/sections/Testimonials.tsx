@@ -14,7 +14,7 @@ function Stars({ rating }: { rating: number }) {
   return (
     <div className="flex gap-0.5">
       {Array.from({ length: 5 }).map((_, i) => (
-        <span key={i} className={i < rating ? "text-yellow-400" : "text-gray-600"}>
+        <span key={i} className={i < rating ? "text-green-600" : "text-gray-600"}>
           ★
         </span>
       ))}
@@ -37,7 +37,7 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Šta kažu naši <span className="text-yellow-400">korisnici</span>
+            Šta kažu naši <span className="text-green-600">korisnici</span>
           </h2>
           <p className="text-gray-400 text-lg">Proverene recenzije zadovoljnih korisnika</p>
         </div>
@@ -57,7 +57,7 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
                   <div className="text-white font-semibold text-sm">{testimonial.name}</div>
                   <div className="text-gray-500 text-xs">{sourceLabels[testimonial.source] || testimonial.source}</div>
                 </div>
-                <span className="text-yellow-400 text-xl">🚕</span>
+                <span className="text-green-600 text-xl">🚕</span>
               </div>
             </div>
           ))}

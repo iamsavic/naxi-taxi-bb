@@ -25,7 +25,7 @@ export default function Services({ services, phoneNumber = "060 000 0000" }: Ser
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Naše <span className="text-yellow-400">usluge</span>
+            Naše <span className="text-green-600">usluge</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Sve što vam je potrebno na jednom mestu
@@ -36,7 +36,7 @@ export default function Services({ services, phoneNumber = "060 000 0000" }: Ser
           {displayServices.map((service) => (
             <div
               key={service._id}
-              className="group bg-gray-800 border border-gray-700 rounded-2xl overflow-hidden hover:border-yellow-400/50 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+              className="group bg-gray-800 border border-gray-700 rounded-2xl overflow-hidden hover:border-green-600/50 transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
               {/* Image or Icon placeholder */}
               <div className="relative h-44 bg-gray-700 flex items-center justify-center overflow-hidden">
@@ -69,7 +69,7 @@ export default function Services({ services, phoneNumber = "060 000 0000" }: Ser
                   </Link>
                   <a
                     href={`tel:${phone}`}
-                    className="flex-1 text-center bg-yellow-400 hover:bg-yellow-300 text-gray-900 text-sm font-bold py-2.5 rounded-lg transition-colors"
+                    className="flex-1 text-center bg-green-600 hover:bg-green-500 text-gray-900 text-sm font-bold py-2.5 rounded-lg transition-colors"
                   >
                     Pozovi
                   </a>
@@ -82,7 +82,7 @@ export default function Services({ services, phoneNumber = "060 000 0000" }: Ser
         <div className="text-center mt-10">
           <Link
             href="/usluge"
-            className="inline-flex items-center gap-2 border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 font-semibold px-8 py-3 rounded-xl transition-all"
+            className="inline-flex items-center gap-2 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-gray-900 font-semibold px-8 py-3 rounded-xl transition-all"
           >
             Pogledaj sve usluge →
           </Link>

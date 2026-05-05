@@ -51,7 +51,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Kontaktirajte <span className="text-yellow-400">nas</span>
+            Kontaktirajte <span className="text-green-600">nas</span>
           </h2>
           <p className="text-gray-400 text-lg">Dostupni smo 24/7 za sve vaše potrebe</p>
         </div>
@@ -76,7 +76,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
                       onClick={item.onClick}
                       target={item.href.startsWith("http") ? "_blank" : undefined}
                       rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="flex items-center gap-2 text-white font-medium text-sm hover:text-yellow-400 transition-colors"
+                      className="flex items-center gap-2 text-white font-medium text-sm hover:text-green-600 transition-colors"
                     >
                       <span>{item.icon}</span> {item.value}
                     </a>
@@ -138,7 +138,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
                       placeholder={field.placeholder}
                       value={formData[field.name as keyof typeof formData]}
                       onChange={(e) => setFormData({ ...formData, [field.name]: e.target.value })}
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition text-sm"
+                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent transition text-sm"
                     />
                     {errors[field.name] && <p className="text-red-400 text-xs mt-1">{errors[field.name]}</p>}
                   </div>
@@ -151,7 +151,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
                     placeholder="Napišite vašu poruku..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition text-sm resize-none"
+                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent transition text-sm resize-none"
                   />
                   {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
                 </div>
@@ -163,7 +163,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full bg-yellow-400 hover:bg-yellow-300 disabled:opacity-50 text-gray-900 font-bold py-3.5 rounded-xl transition-colors"
+                  className="w-full bg-green-600 hover:bg-green-500 disabled:opacity-50 text-gray-900 font-bold py-3.5 rounded-xl transition-colors"
                 >
                   {status === "loading" ? "Slanje..." : "Pošalji poruku"}
                 </button>

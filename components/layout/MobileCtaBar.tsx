@@ -25,7 +25,7 @@ export default function MobileCtaBar({
         <a
           href={`tel:${phone}`}
           onClick={events.callTaxi}
-          className="flex flex-col items-center justify-center py-3 gap-1 text-yellow-400 active:bg-gray-900"
+          className="flex flex-col items-center justify-center py-3 gap-1 text-green-600 active:bg-gray-900"
         >
           <span className="text-xl">📞</span>
           <span className="text-xs font-medium">Pozovi</span>

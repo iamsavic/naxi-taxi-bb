@@ -50,17 +50,17 @@ export default function AerodromPage() {
         <div className="bg-gray-950 py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full px-4 py-1.5 mb-6">
-                <span className="text-yellow-400 text-sm font-medium">✈️ Aerodromski prevoz</span>
+              <div className="inline-flex items-center gap-2 bg-green-600/10 border border-green-600/30 rounded-full px-4 py-1.5 mb-6">
+                <span className="text-green-600 text-sm font-medium">✈️ Aerodromski prevoz</span>
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                Taxi do <span className="text-yellow-400">aerodroma</span>
+                Taxi do <span className="text-green-600">aerodroma</span>
               </h1>
               <p className="text-gray-400 text-xl mb-8">
                 Sigurno i na vreme do aerodroma. Zakazivanje unapred, praćenje leta i profesionalni vozači.
               </p>
               <div className="flex flex-wrap gap-3">
-                <a href={`tel:${PHONE.replace(/\s/g, "")}`} onClick={events.callTaxi} className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-6 py-4 rounded-xl transition-all">
+                <a href={`tel:${PHONE.replace(/\s/g, "")}`} onClick={events.callTaxi} className="flex items-center gap-2 bg-green-600 hover:bg-green-500 text-gray-900 font-bold px-6 py-4 rounded-xl transition-all">
                   📞 Pozovi za rezervaciju
                 </a>
               </div>
@@ -111,30 +111,30 @@ export default function AerodromPage() {
                           value={form[field.name as keyof typeof form]}
                           onChange={(e) => setForm({ ...form, [field.name]: e.target.value })}
                           required={field.label.includes("*")}
-                          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition text-sm"
+                          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-600 transition text-sm"
                         />
                       </div>
                     ))}
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-1.5">Br. putnika</label>
-                        <select value={form.passengers} onChange={(e) => setForm({ ...form, passengers: e.target.value })} className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition text-sm">
+                        <select value={form.passengers} onChange={(e) => setForm({ ...form, passengers: e.target.value })} className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-green-600 transition text-sm">
                           {[1,2,3,4,5,6,7,8].map(n => <option key={n} value={n}>{n}</option>)}
                         </select>
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-1.5">Br. kofera</label>
-                        <select value={form.luggage} onChange={(e) => setForm({ ...form, luggage: e.target.value })} className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition text-sm">
+                        <select value={form.luggage} onChange={(e) => setForm({ ...form, luggage: e.target.value })} className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-green-600 transition text-sm">
                           {[0,1,2,3,4,5,6].map(n => <option key={n} value={n}>{n}</option>)}
                         </select>
                       </div>
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-1.5">Napomena</label>
-                      <textarea rows={3} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition text-sm resize-none" placeholder="Broj leta, posebni zahtevi..." />
+                      <textarea rows={3} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-600 transition text-sm resize-none" placeholder="Broj leta, posebni zahtevi..." />
                     </div>
                     {status === "error" && <p className="text-red-400 text-sm">Greška pri slanju. Pokušajte ponovo.</p>}
-                    <button type="submit" disabled={status === "loading"} className="w-full bg-yellow-400 hover:bg-yellow-300 disabled:opacity-50 text-gray-900 font-bold py-3.5 rounded-xl transition-colors">
+                    <button type="submit" disabled={status === "loading"} className="w-full bg-green-600 hover:bg-green-500 disabled:opacity-50 text-gray-900 font-bold py-3.5 rounded-xl transition-colors">
                       {status === "loading" ? "Slanje..." : "Zakaži vožnju"}
                     </button>
                   </form>

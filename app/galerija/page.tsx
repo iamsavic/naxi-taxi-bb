@@ -32,7 +32,7 @@ export default async function GalerijaPage() {
         <div className="bg-gray-950 py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              Naša <span className="text-yellow-400">galerija</span>
+              Naša <span className="text-green-600">galerija</span>
             </h1>
             <p className="text-gray-400 text-xl">Vozila, tim i brendiranje Naxi Taxi BB</p>
           </div>

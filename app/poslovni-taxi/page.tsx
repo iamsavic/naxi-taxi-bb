@@ -45,11 +45,11 @@ export default function PoslovniTaxiPage() {
       <main className="pt-20">
         <div className="bg-gray-950 py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full px-4 py-1.5 mb-6">
-              <span className="text-yellow-400 text-sm font-medium">🏢 Za firme i partnere</span>
+            <div className="inline-flex items-center gap-2 bg-green-600/10 border border-green-600/30 rounded-full px-4 py-1.5 mb-6">
+              <span className="text-green-600 text-sm font-medium">🏢 Za firme i partnere</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              Poslovni <span className="text-yellow-400">taxi</span>
+              Poslovni <span className="text-green-600">taxi</span>
             </h1>
             <p className="text-gray-400 text-xl">
               Organizovan taxi prevoz za firme, hotele i restorane uz mesečni obračun i individualne uslove.
@@ -74,7 +74,7 @@ export default function PoslovniTaxiPage() {
                     </div>
                   ))}
                 </div>
-                <a href={`tel:${PHONE.replace(/\s/g, "")}`} onClick={events.callTaxi} className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-6 py-4 rounded-xl transition-all">
+                <a href={`tel:${PHONE.replace(/\s/g, "")}`} onClick={events.callTaxi} className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-gray-900 font-bold px-6 py-4 rounded-xl transition-all">
                   📞 Pozovite nas
                 </a>
               </div>
@@ -104,16 +104,16 @@ export default function PoslovniTaxiPage() {
                           value={form[field.name as keyof typeof form]}
                           onChange={(e) => setForm({ ...form, [field.name]: e.target.value })}
                           required
-                          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition text-sm"
+                          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-600 transition text-sm"
                         />
                       </div>
                     ))}
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-1.5">Poruka *</label>
-                      <textarea rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition text-sm resize-none" placeholder="Opišite vaše potrebe..." />
+                      <textarea rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-600 transition text-sm resize-none" placeholder="Opišite vaše potrebe..." />
                     </div>
                     {status === "error" && <p className="text-red-400 text-sm">Greška. Pokušajte ponovo.</p>}
-                    <button type="submit" disabled={status === "loading"} className="w-full bg-yellow-400 hover:bg-yellow-300 disabled:opacity-50 text-gray-900 font-bold py-3.5 rounded-xl transition-colors">
+                    <button type="submit" disabled={status === "loading"} className="w-full bg-green-600 hover:bg-green-500 disabled:opacity-50 text-gray-900 font-bold py-3.5 rounded-xl transition-colors">
                       {status === "loading" ? "Slanje..." : "Pošalji upit"}
                     </button>
                   </form>

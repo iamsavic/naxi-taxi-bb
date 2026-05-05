@@ -19,7 +19,7 @@ export default function Pricing({ tariffs }: PricingProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            <span className="text-yellow-400">Cenovnik</span>
+            <span className="text-green-600">Cenovnik</span>
           </h2>
           <p className="text-gray-400 text-lg">Jasne i transparentne cene, bez iznenađenja</p>
         </div>
@@ -30,12 +30,12 @@ export default function Pricing({ tariffs }: PricingProps) {
               key={tariff._id}
               className={`relative rounded-2xl p-6 lg:p-8 border transition-all ${
                 tariff.isHighlighted
-                  ? "bg-yellow-400 border-yellow-300 text-gray-900"
+                  ? "bg-green-600 border-green-500 text-gray-900"
                   : "bg-gray-900 border-gray-800 text-white"
               }`}
             >
               {tariff.isHighlighted && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-900 text-yellow-400 text-xs font-bold px-3 py-1 rounded-full border border-yellow-400">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-900 text-green-600 text-xs font-bold px-3 py-1 rounded-full border border-green-600">
                   Popularna
                 </div>
               )}
@@ -48,7 +48,7 @@ export default function Pricing({ tariffs }: PricingProps) {
               </p>
 
               <div className="mb-6">
-                <span className={`text-5xl font-black ${tariff.isHighlighted ? "text-gray-900" : "text-yellow-400"}`}>
+                <span className={`text-5xl font-black ${tariff.isHighlighted ? "text-gray-900" : "text-green-600"}`}>
                   {tariff.pricePerKm}
                 </span>
                 <span className={`text-lg font-semibold ml-1 ${tariff.isHighlighted ? "text-gray-700" : "text-gray-300"}`}>
@@ -79,7 +79,7 @@ export default function Pricing({ tariffs }: PricingProps) {
           </p>
           <Link
             href="/cenovnik"
-            className="inline-flex items-center gap-2 border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 font-semibold px-8 py-3 rounded-xl transition-all"
+            className="inline-flex items-center gap-2 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-gray-900 font-semibold px-8 py-3 rounded-xl transition-all"
           >
             Pogledaj kompletan cenovnik →
           </Link>

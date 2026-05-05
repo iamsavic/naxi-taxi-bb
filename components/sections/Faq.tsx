@@ -25,7 +25,7 @@ export default function Faq({ items }: FaqProps) {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Česta <span className="text-yellow-400">pitanja</span>
+            Česta <span className="text-green-600">pitanja</span>
           </h2>
           <p className="text-gray-400 text-lg">Sve što trebate znati o našoj usluzi</p>
         </div>
@@ -43,7 +43,7 @@ export default function Faq({ items }: FaqProps) {
               >
                 <span className="text-white font-medium pr-4">{item.question}</span>
                 <span
-                  className={`text-yellow-400 flex-shrink-0 transition-transform duration-300 ${
+                  className={`text-green-600 flex-shrink-0 transition-transform duration-300 ${
                     openId === item._id ? "rotate-45" : ""
                   }`}
                 >

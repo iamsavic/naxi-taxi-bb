@@ -14,7 +14,7 @@ export default function GalleryPreview({ images }: GalleryPreviewProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Naša <span className="text-yellow-400">galerija</span>
+            Naša <span className="text-green-600">galerija</span>
           </h2>
           <p className="text-gray-400 text-lg">Pogledajte naša vozila i tim</p>
         </div>
@@ -48,7 +48,7 @@ export default function GalleryPreview({ images }: GalleryPreviewProps) {
         <div className="text-center">
           <Link
             href="/galerija"
-            className="inline-flex items-center gap-2 border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 font-semibold px-8 py-3 rounded-xl transition-all"
+            className="inline-flex items-center gap-2 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-gray-900 font-semibold px-8 py-3 rounded-xl transition-all"
           >
             Pogledaj galeriju →
           </Link>

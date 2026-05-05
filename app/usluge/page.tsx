@@ -26,7 +26,7 @@ export default async function UslugePage() {
         <div className="bg-gray-950 py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              Naše <span className="text-yellow-400">usluge</span>
+              Naše <span className="text-green-600">usluge</span>
             </h1>
             <p className="text-gray-400 text-xl max-w-2xl mx-auto">
               Sve što vam je potrebno — brzo, sigurno i profesionalno
@@ -63,7 +63,7 @@ export default async function UslugePage() {
                     <p className="text-gray-400 leading-relaxed mb-4">{service.shortDescription}</p>
                     <a
                       href={`tel:${phone.replace(/\s/g, "")}`}
-                      className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-5 py-3 rounded-xl transition-colors"
+                      className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-gray-900 font-bold px-5 py-3 rounded-xl transition-colors"
                     >
                       📞 Pozovi za rezervaciju
                     </a>
@@ -75,7 +75,7 @@ export default async function UslugePage() {
         </section>
 
         <div className="py-12 bg-gray-950 text-center">
-          <Link href="/kontakt" className="inline-flex items-center gap-2 border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 font-semibold px-8 py-3 rounded-xl transition-all">
+          <Link href="/kontakt" className="inline-flex items-center gap-2 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-gray-900 font-semibold px-8 py-3 rounded-xl transition-all">
             Pošaljite upit →
           </Link>
         </div>

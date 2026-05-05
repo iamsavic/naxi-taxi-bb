@@ -27,23 +27,23 @@ export default function Hero({
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-950">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-yellow-950/20" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-yellow-400/10 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-green-950/20" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-green-600/10 via-transparent to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32 lg:pb-20">
         <div className="max-w-3xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full px-4 py-1.5 mb-6">
-            <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-            <span className="text-yellow-400 text-sm font-medium">Dostupni 24/7</span>
+          <div className="inline-flex items-center gap-2 bg-green-600/10 border border-green-600/30 rounded-full px-4 py-1.5 mb-6">
+            <span className="w-2 h-2 bg-green-600 rounded-full animate-pulse" />
+            <span className="text-green-600 text-sm font-medium">Dostupni 24/7</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             {title.split("24/7").map((part, i, arr) => (
               <span key={i}>
                 {part}
-                {i < arr.length - 1 && <span className="text-yellow-400">24/7</span>}
+                {i < arr.length - 1 && <span className="text-green-600">24/7</span>}
               </span>
             ))}
           </h1>
@@ -57,7 +57,7 @@ export default function Hero({
             <a
               href={`tel:${phone}`}
               onClick={events.callTaxi}
-              className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-6 py-4 rounded-xl transition-all hover:scale-105 text-base min-w-[160px] justify-center"
+              className="flex items-center gap-2 bg-green-600 hover:bg-green-500 text-gray-900 font-bold px-6 py-4 rounded-xl transition-all hover:scale-105 text-base min-w-[160px] justify-center"
             >
               📞 Pozovi taxi
             </a>
@@ -83,7 +83,7 @@ export default function Hero({
             <Link
               href="/cenovnik"
               onClick={events.viewPricing}
-              className="flex items-center gap-2 bg-transparent border-2 border-gray-600 hover:border-yellow-400 text-gray-300 hover:text-yellow-400 font-semibold px-6 py-4 rounded-xl transition-all text-base min-w-[160px] justify-center"
+              className="flex items-center gap-2 bg-transparent border-2 border-gray-600 hover:border-green-600 text-gray-300 hover:text-green-600 font-semibold px-6 py-4 rounded-xl transition-all text-base min-w-[160px] justify-center"
             >
               💰 Cenovnik
             </Link>
@@ -97,7 +97,7 @@ export default function Hero({
               { value: "10+", label: "Godina iskustva" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-yellow-400 text-2xl font-bold">{stat.value}</div>
+                <div className="text-green-600 text-2xl font-bold">{stat.value}</div>
                 <div className="text-gray-500 text-sm">{stat.label}</div>
               </div>
             ))}

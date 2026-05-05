@@ -37,17 +37,17 @@ export default function Footer({ settings }: FooterProps) {
             <div className="flex items-center gap-2 mb-4">
               <span className="text-2xl">🚕</span>
               <span className="text-white font-bold text-lg">
-                Naxi Taxi<span className="text-yellow-400"> BB</span>
+                Naxi Taxi<span className="text-green-600"> BB</span>
               </span>
             </div>
             <p className="text-sm leading-relaxed mb-4">
               {settings?.tagline || "Pouzdan taxi prevoz 24/7. Brzo, sigurno i profesionalno."}
             </p>
             {settings?.socialLinks?.facebook && (
-              <a href={settings.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-sm text-yellow-400 hover:underline mr-4">Facebook</a>
+              <a href={settings.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-sm text-green-600 hover:underline mr-4">Facebook</a>
             )}
             {settings?.socialLinks?.instagram && (
-              <a href={settings.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-sm text-yellow-400 hover:underline">Instagram</a>
+              <a href={settings.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-sm text-green-600 hover:underline">Instagram</a>
             )}
           </div>
 
@@ -57,7 +57,7 @@ export default function Footer({ settings }: FooterProps) {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-yellow-400 transition-colors">
+                  <Link href={link.href} className="text-sm hover:text-green-600 transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -71,7 +71,7 @@ export default function Footer({ settings }: FooterProps) {
             <ul className="space-y-2">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-yellow-400 transition-colors">
+                  <Link href={link.href} className="text-sm hover:text-green-600 transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -84,7 +84,7 @@ export default function Footer({ settings }: FooterProps) {
             <h3 className="text-white font-semibold mb-4">Kontakt</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href={`tel:${phone.replace(/\s/g, "")}`} className="flex items-center gap-2 hover:text-yellow-400 transition-colors">
+                <a href={`tel:${phone.replace(/\s/g, "")}`} className="flex items-center gap-2 hover:text-green-600 transition-colors">
                   <span>📞</span> {phone}
                 </a>
               </li>
@@ -99,7 +99,7 @@ export default function Footer({ settings }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${email}`} className="flex items-center gap-2 hover:text-yellow-400 transition-colors">
+                <a href={`mailto:${email}`} className="flex items-center gap-2 hover:text-green-600 transition-colors">
                   <span>✉️</span> {email}
                 </a>
               </li>

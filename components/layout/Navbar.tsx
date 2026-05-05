@@ -41,7 +41,7 @@ export default function Navbar({ phoneNumber = "060 000 0000" }: NavbarProps) {
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
             <span className="text-2xl">🚕</span>
             <span className="text-white font-bold text-lg leading-tight">
-              Naxi Taxi<span className="text-yellow-400"> BB</span>
+              Naxi Taxi<span className="text-green-600"> BB</span>
             </span>
           </Link>
 
@@ -51,7 +51,7 @@ export default function Navbar({ phoneNumber = "060 000 0000" }: NavbarProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-300 hover:text-yellow-400 text-sm font-medium transition-colors"
+                className="text-gray-300 hover:text-green-600 text-sm font-medium transition-colors"
               >
                 {link.label}
               </Link>
@@ -63,7 +63,7 @@ export default function Navbar({ phoneNumber = "060 000 0000" }: NavbarProps) {
             <a
               href={`tel:${phoneNumber.replace(/\s/g, "")}`}
               onClick={events.callTaxi}
-              className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-5 py-2.5 rounded-xl transition-colors text-sm"
+              className="flex items-center gap-2 bg-green-600 hover:bg-green-500 text-gray-900 font-bold px-5 py-2.5 rounded-xl transition-colors text-sm"
             >
               <span>📞</span> Pozovi taxi
             </a>
@@ -91,7 +91,7 @@ export default function Navbar({ phoneNumber = "060 000 0000" }: NavbarProps) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="block px-4 py-3 text-gray-300 hover:text-yellow-400 hover:bg-gray-900 transition-colors"
+                className="block px-4 py-3 text-gray-300 hover:text-green-600 hover:bg-gray-900 transition-colors"
               >
                 {link.label}
               </Link>
@@ -100,7 +100,7 @@ export default function Navbar({ phoneNumber = "060 000 0000" }: NavbarProps) {
               <a
                 href={`tel:${phoneNumber.replace(/\s/g, "")}`}
                 onClick={events.callTaxi}
-                className="flex items-center justify-center gap-2 bg-yellow-400 text-gray-900 font-bold py-3 rounded-xl w-full"
+                className="flex items-center justify-center gap-2 bg-green-600 text-gray-900 font-bold py-3 rounded-xl w-full"
               >
                 <span>📞</span> Pozovi taxi
               </a>

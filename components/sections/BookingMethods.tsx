@@ -29,7 +29,7 @@ export default function BookingMethods({
         <a
           href={`tel:${phone}`}
           onClick={events.callTaxi}
-          className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-6 py-3 rounded-xl transition-all"
+          className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-gray-900 font-bold px-6 py-3 rounded-xl transition-all"
         >
           📞 Pozovi {phoneNumber}
         </a>
@@ -82,7 +82,7 @@ export default function BookingMethods({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Naručite taxi na <span className="text-yellow-400">3 načina</span>
+            Naručite taxi na <span className="text-green-600">3 načina</span>
           </h2>
           <p className="text-gray-400 text-lg">Odaberite način koji vam najviše odgovara</p>
         </div>
@@ -94,11 +94,11 @@ export default function BookingMethods({
               className="bg-gray-900 border border-gray-800 rounded-2xl p-6 lg:p-8 flex flex-col gap-4"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-yellow-400/10 rounded-xl flex items-center justify-center text-xl">
+                <div className="w-10 h-10 bg-green-600/10 rounded-xl flex items-center justify-center text-xl">
                   {method.icon}
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center text-yellow-400 text-xs font-bold border border-gray-700">
+                  <span className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center text-green-600 text-xs font-bold border border-gray-700">
                     {idx + 1}
                   </span>
                   <h3 className="text-white font-semibold">{method.title}</h3>

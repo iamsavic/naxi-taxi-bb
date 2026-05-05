@@ -37,7 +37,7 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Zašto izabrati <span className="text-yellow-400">Naxi Taxi BB</span>?
+            Zašto izabrati <span className="text-green-600">Naxi Taxi BB</span>?
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Kvalitet i pouzdanost u svakoj vožnji
@@ -48,7 +48,7 @@ export default function Features() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group bg-gray-800 hover:bg-gray-750 border border-gray-700 hover:border-yellow-400/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
+              className="group bg-gray-800 hover:bg-gray-750 border border-gray-700 hover:border-green-600/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="text-4xl mb-4">{feature.icon}</div>
               <h3 className="text-white font-semibold text-lg mb-2">{feature.title}</h3>

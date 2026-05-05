@@ -29,7 +29,7 @@ export default async function CenovnikPage() {
         <div className="bg-gray-950 py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              <span className="text-yellow-400">Cenovnik</span>
+              <span className="text-green-600">Cenovnik</span>
             </h1>
             <p className="text-gray-400 text-xl max-w-2xl mx-auto">
               Jasne i transparentne cene — bez skrivenih troškova
@@ -51,11 +51,11 @@ export default async function CenovnikPage() {
                 </thead>
                 <tbody>
                   {displayTariffs.map((t) => (
-                    <tr key={t._id} className={`border-b border-gray-700 last:border-0 ${t.isHighlighted ? "bg-yellow-400/5" : ""}`}>
+                    <tr key={t._id} className={`border-b border-gray-700 last:border-0 ${t.isHighlighted ? "bg-green-600/5" : ""}`}>
                       <td className="px-6 py-4 font-semibold text-white">{t.title}</td>
                       <td className="px-6 py-4 text-gray-400 text-sm">{t.validPeriod}</td>
                       <td className="px-6 py-4 text-gray-300">{t.startPrice} RSD</td>
-                      <td className="px-6 py-4 text-yellow-400 font-bold text-lg">{t.pricePerKm} RSD</td>
+                      <td className="px-6 py-4 text-green-600 font-bold text-lg">{t.pricePerKm} RSD</td>
                       <td className="px-6 py-4 text-gray-300">{t.waitingPrice} RSD/h</td>
                     </tr>
                   ))}
@@ -66,13 +66,13 @@ export default async function CenovnikPage() {
             {/* Cards (mobile) */}
             <div className="md:hidden space-y-4 mb-8">
               {displayTariffs.map((t) => (
-                <div key={t._id} className={`rounded-2xl p-5 border ${t.isHighlighted ? "bg-yellow-400/10 border-yellow-400/50" : "bg-gray-800 border-gray-700"}`}>
+                <div key={t._id} className={`rounded-2xl p-5 border ${t.isHighlighted ? "bg-green-600/10 border-green-600/50" : "bg-gray-800 border-gray-700"}`}>
                   <h3 className="text-white font-bold text-lg mb-1">{t.title}</h3>
                   <p className="text-gray-400 text-sm mb-3">{t.validPeriod}</p>
                   <div className="grid grid-cols-3 gap-3">
                     {[{ label: "Start", val: `${t.startPrice} RSD` }, { label: "Cena/km", val: `${t.pricePerKm} RSD`, highlight: true }, { label: "Čekanje", val: `${t.waitingPrice}/h` }].map((item) => (
                       <div key={item.label} className="text-center">
-                        <div className={`font-bold ${item.highlight ? "text-yellow-400 text-xl" : "text-white"}`}>{item.val}</div>
+                        <div className={`font-bold ${item.highlight ? "text-green-600 text-xl" : "text-white"}`}>{item.val}</div>
                         <div className="text-gray-500 text-xs">{item.label}</div>
                       </div>
                     ))}
@@ -82,17 +82,17 @@ export default async function CenovnikPage() {
               ))}
             </div>
 
-            <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-xl p-5 mb-8">
-              <p className="text-yellow-400 text-sm">
+            <div className="bg-green-600/10 border border-green-600/30 rounded-xl p-5 mb-8">
+              <p className="text-green-600 text-sm">
                 <strong>Napomena:</strong> Cene su informativnog karaktera. Konačna cena zavisi od rute, uslova saobraćaja i važeće tarife. Za tačnu cenu pozovite dispečera.
               </p>
             </div>
 
             <div className="text-center">
-              <a href={`tel:${phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-8 py-4 rounded-xl transition-all mr-4">
+              <a href={`tel:${phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-gray-900 font-bold px-8 py-4 rounded-xl transition-all mr-4">
                 📞 Pozovi taxi
               </a>
-              <Link href="/taxi-do-aerodroma" className="inline-flex items-center gap-2 border-2 border-gray-600 hover:border-yellow-400 text-gray-300 hover:text-yellow-400 font-semibold px-8 py-4 rounded-xl transition-all">
+              <Link href="/taxi-do-aerodroma" className="inline-flex items-center gap-2 border-2 border-gray-600 hover:border-green-600 text-gray-300 hover:text-green-600 font-semibold px-8 py-4 rounded-xl transition-all">
                 ✈️ Taxi do aerodroma
               </Link>
             </div>
