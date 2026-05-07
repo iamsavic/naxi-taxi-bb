@@ -1,3 +1,9 @@
+export interface WorkingHoursEntry {
+  days: string;
+  hours: string;
+  closed?: boolean;
+}
+
 export interface SiteSettings {
   siteName: string;
   tagline: string;
@@ -7,6 +13,7 @@ export interface SiteSettings {
   email: string;
   address: string;
   workingHours: string;
+  workingHoursDetails?: WorkingHoursEntry[];
   googleMapsUrl: string;
   heroTitle: string;
   heroSubtitle: string;

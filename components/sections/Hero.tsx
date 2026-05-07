@@ -92,7 +92,7 @@ export default function Hero({
           {/* Stats */}
           <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-gray-800">
             {[
-              { value: "24/7", label: "Dostupnost" },
+              { value: "10", label: "Vozila" },
               { value: "5★", label: "Ocena" },
               { value: "10+", label: "Godina iskustva" },
             ].map((stat) => (

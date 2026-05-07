@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { PricingTariff } from "@/lib/cms";
 
 const fallbackTariffs: PricingTariff[] = [
-  { _id: "1", title: "Tarifa 1", validPeriod: "Radnim danom 06:00–22:00", startPrice: 320, pricePerKm: 105, waitingPrice: 1800, notes: "Nedelja i praznici, van teritorije", isHighlighted: false },
-  { _id: "2", title: "Tarifa 2", validPeriod: "Radnim danom 22:00–06:00", startPrice: 320, pricePerKm: 135, waitingPrice: 1800, notes: "Noćna tarifa", isHighlighted: true },
-  { _id: "3", title: "Tarifa 3", validPeriod: "Posebni uslovi / van grada", startPrice: 320, pricePerKm: 210, waitingPrice: 1800, notes: "Van gradske zone", isHighlighted: false },
+  { _id: "1", title: "Tarifa 1", validPeriod: "06:00 – 00:00", startPrice: 200, pricePerKm: 80, waitingPrice: 700, notes: "Start uključuje prvih 500m", isHighlighted: false },
+  { _id: "2", title: "Tarifa 2", validPeriod: "Noćna / vikend", startPrice: 200, pricePerKm: 100, waitingPrice: 700, notes: "Start uključuje prvih 500m", isHighlighted: true },
+  { _id: "3", title: "Tarifa 3", validPeriod: "Van teritorije BB", startPrice: 200, pricePerKm: 70, waitingPrice: 700, notes: "Van teritorije Bajine Bašte", isHighlighted: false },
 ];
 
 interface PricingProps {
@@ -58,10 +58,10 @@ export default function Pricing({ tariffs }: PricingProps) {
 
               <ul className={`space-y-2 text-sm ${tariff.isHighlighted ? "text-gray-800" : "text-gray-400"}`}>
                 <li className="flex items-center gap-2">
-                  <span>✓</span> Start: {tariff.startPrice} RSD
+                  <span>✓</span> Start (+500m): {tariff.startPrice} RSD
                 </li>
                 <li className="flex items-center gap-2">
-                  <span>✓</span> Čekanje: {tariff.waitingPrice} RSD/h
+                  <span>✓</span> Čekanje (1h): {tariff.waitingPrice} RSD
                 </li>
                 {tariff.notes && (
                   <li className="flex items-start gap-2">

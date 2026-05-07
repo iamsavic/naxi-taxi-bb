@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { events } from "@/lib/analytics";
-import type { SiteSettings } from "@/lib/cms";
+import type { SiteSettings, WorkingHoursEntry } from "@/lib/cms";
 
 interface ContactSectionProps {
   settings?: SiteSettings | null;
@@ -18,7 +18,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
   const whatsapp = settings?.whatsappNumber || "060 000 0000";
   const email = settings?.email || "info@naxitaxibb.rs";
   const address = settings?.address || "Beograd, Srbija";
-  const workingHours = settings?.workingHours || "Pon–Ned 00:00–24:00";
+  const workingHoursDetails: WorkingHoursEntry[] = settings?.workingHoursDetails || [];
   const waMessage = encodeURIComponent("Zdravo, potreban mi je taxi. Moja lokacija je: ");
 
   async function handleSubmit(e: React.FormEvent) {
@@ -66,7 +66,6 @@ export default function ContactSection({ settings }: ContactSectionProps) {
                 { icon: "📱", label: "WhatsApp", value: whatsapp, href: `https://wa.me/${whatsapp.replace(/[\s+]/g, "")}?text=${waMessage}`, onClick: events.clickWhatsapp },
                 { icon: "✉️", label: "Email", value: email, href: `mailto:${email}`, onClick: () => {} },
                 { icon: "📍", label: "Adresa", value: address, href: undefined, onClick: () => {} },
-                { icon: "🕐", label: "Radno vreme", value: workingHours, href: undefined, onClick: () => {} },
               ].map((item) => (
                 <div key={item.label} className="bg-gray-800 rounded-xl p-4 border border-gray-700">
                   <div className="text-xs text-gray-500 mb-1">{item.label}</div>
@@ -87,6 +86,25 @@ export default function ContactSection({ settings }: ContactSectionProps) {
                   )}
                 </div>
               ))}
+
+              {/* Radno vreme — structured */}
+              <div className="bg-gray-800 rounded-xl p-4 border border-gray-700 sm:col-span-2">
+                <div className="text-xs text-gray-500 mb-2">🕐 Radno vreme</div>
+                {workingHoursDetails.length > 0 ? (
+                  <div className="space-y-1">
+                    {workingHoursDetails.map((entry) => (
+                      <div key={entry.days} className="flex justify-between text-sm">
+                        <span className="text-gray-300">{entry.days}</span>
+                        <span className={entry.closed ? "text-red-400 font-medium" : "text-white font-medium"}>
+                          {entry.hours}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-white text-sm">Pon–Čet 06:00–00:00 | Pet–Sub 06:00–03:00 | Ned: neradna</div>
+                )}
+              </div>
             </div>
 
             {/* Map placeholder */}

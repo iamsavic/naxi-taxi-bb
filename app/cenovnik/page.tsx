@@ -17,9 +17,9 @@ export default async function CenovnikPage() {
   const phone = settings?.phoneNumber || "060 000 0000";
 
   const displayTariffs = tariffs && tariffs.length > 0 ? tariffs : [
-    { _id: "1", title: "Tarifa 1", validPeriod: "Radnim danom 06:00–22:45", startPrice: 320, pricePerKm: 105, waitingPrice: 1800, notes: "Nedelja i praznici, van teritorije", isHighlighted: false },
-    { _id: "2", title: "Tarifa 2", validPeriod: "Radnim danom 223:00–06:00", startPrice: 500, pricePerKm: 135, waitingPrice: 1800, notes: "Noćna tarifa", isHighlighted: true },
-    { _id: "3", title: "Tarifa 3", validPeriod: "Posebni uslovi / van grada", startPrice: 320, pricePerKm: 210, waitingPrice: 1800, notes: "Van gradske zone", isHighlighted: false },
+    { _id: "1", title: "Tarifa 1", validPeriod: "06:00 – 00:00", startPrice: 200, pricePerKm: 80, waitingPrice: 700, notes: "Start uključuje prvih 500m", isHighlighted: false },
+    { _id: "2", title: "Tarifa 2", validPeriod: "Noćna / vikend", startPrice: 200, pricePerKm: 100, waitingPrice: 700, notes: "Start uključuje prvih 500m", isHighlighted: true },
+    { _id: "3", title: "Tarifa 3", validPeriod: "Van teritorije BB", startPrice: 200, pricePerKm: 70, waitingPrice: 700, notes: "Van teritorije Bajine Bašte", isHighlighted: false },
   ];
 
   return (
@@ -44,7 +44,7 @@ export default async function CenovnikPage() {
               <table className="w-full">
                 <thead className="bg-gray-750 border-b border-gray-700">
                   <tr>
-                    {["Tarifa", "Period", "Start", "Cena/km", "Čekanje"].map((h) => (
+                    {["Tarifa", "Period", "Start (+500m)", "Cena/km", "Čekanje (1h)"].map((h) => (
                       <th key={h} className="px-6 py-4 text-left text-sm font-semibold text-gray-300">{h}</th>
                     ))}
                   </tr>
@@ -56,7 +56,7 @@ export default async function CenovnikPage() {
                       <td className="px-6 py-4 text-gray-400 text-sm">{t.validPeriod}</td>
                       <td className="px-6 py-4 text-gray-300">{t.startPrice} RSD</td>
                       <td className="px-6 py-4 text-green-600 font-bold text-lg">{t.pricePerKm} RSD</td>
-                      <td className="px-6 py-4 text-gray-300">{t.waitingPrice} RSD/h</td>
+                      <td className="px-6 py-4 text-gray-300">{t.waitingPrice} RSD</td>
                     </tr>
                   ))}
                 </tbody>

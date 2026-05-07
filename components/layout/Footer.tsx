@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { SiteSettings } from "@/lib/cms";
+import type { SiteSettings, WorkingHoursEntry } from "@/lib/cms";
 
 const quickLinks = [
   { href: "/", label: "Početna" },
@@ -25,7 +25,7 @@ export default function Footer({ settings }: FooterProps) {
   const whatsapp = settings?.whatsappNumber || "060 000 0000";
   const email = settings?.email || "info@naxitaxibb.rs";
   const address = settings?.address || "Beograd, Srbija";
-  const workingHours = settings?.workingHours || "Pon–Ned 00:00–24:00";
+  const workingHoursDetails: WorkingHoursEntry[] = settings?.workingHoursDetails || [];
   const waMessage = encodeURIComponent("Zdravo, potreban mi je taxi. Moja lokacija je: ");
 
   return (
@@ -106,8 +106,20 @@ export default function Footer({ settings }: FooterProps) {
               <li className="flex items-start gap-2">
                 <span>📍</span> <span>{address}</span>
               </li>
-              <li className="flex items-center gap-2">
-                <span>🕐</span> {workingHours}
+              <li className="flex items-start gap-2">
+                <span className="mt-0.5">🕐</span>
+                {workingHoursDetails.length > 0 ? (
+                  <div className="space-y-0.5">
+                    {workingHoursDetails.map((entry) => (
+                      <div key={entry.days} className="flex gap-2">
+                        <span className="text-gray-500">{entry.days}:</span>
+                        <span className={entry.closed ? "text-red-400" : ""}>{entry.hours}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <span>{settings?.workingHours || "Pon–Čet 06:00–00:00"}</span>
+                )}
               </li>
             </ul>
           </div>
@@ -119,7 +131,9 @@ export default function Footer({ settings }: FooterProps) {
           <p className="text-xs text-gray-600">
             © {new Date().getFullYear()} Naxi Taxi BB. Sva prava zadržana.
           </p>
-          <p className="text-xs text-gray-600">Dostupni 24/7</p>
+          <p className="text-xs text-gray-600">
+            PIB: 110 355 940 &nbsp;·&nbsp; MB: 64829785
+          </p>
         </div>
       </div>
     </footer>
