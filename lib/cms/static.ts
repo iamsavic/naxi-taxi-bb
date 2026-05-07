@@ -22,9 +22,9 @@ export const staticSiteSettings: SiteSettings = {
     { days: "Petak – Subota", hours: "06:00 – 03:00" },
     { days: "Nedelja", hours: "Neradna", closed: true },
   ],
-  googleMapsUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d402.8150687680116!2d19.564922200473106!3d43.97779957697882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759b5b3065fab8b%3A0x413e9e18a3c84975!2sBajina%20Basta!5e1!3m2!1sen!2srs!4v1778188864012!5m2!1sen!2srs",
+  googleMapsUrl: "https://maps.app.goo.gl/MxTHpqyUSwVn99C67",
   heroTitle: "Naxi Taxi Bajina Bašta — Brz i Pouzdan",
-  heroSubtitle: "Dostupni 24/7. Pozovite nas ili nas kontaktirajte putem Vibera i WhatsApp-a.",
+  heroSubtitle: "Pozovite nas ili nas kontaktirajte putem Vibera i WhatsApp-a.",
   heroImageUrl: null,
   logoUrl: null,
   socialLinks: {
