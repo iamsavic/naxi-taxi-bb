@@ -25,7 +25,7 @@ export const staticSiteSettings: SiteSettings = {
   googleMapsUrl: "https://maps.app.goo.gl/MxTHpqyUSwVn99C67",
   heroTitle: "Naxi Taxi Bajina Bašta — Brz i Pouzdan",
   heroSubtitle: "Pozovite nas ili nas kontaktirajte putem Vibera i WhatsApp-a.",
-  heroImageUrl: "/images/hero.jpg",
+  heroImageUrl: "/images/hero.jpeg",
   logoUrl: null,
   socialLinks: {
     facebook: "https://facebook.com",
