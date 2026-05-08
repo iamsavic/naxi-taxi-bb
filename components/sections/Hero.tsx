@@ -35,8 +35,9 @@ export default function Hero({
           src={heroImageUrl}
           alt="Naxi Taxi BB hero"
           fill
-          className="object-cover object-center sm:object-center"
+          className="object-cover object-center"
           priority
+          quality={95}
           sizes="100vw"
         />
       ) : (
