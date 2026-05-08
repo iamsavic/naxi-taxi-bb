@@ -27,7 +27,7 @@ export default function Hero({
   const viber = viberNumber!.replace(/\s/g, "");
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-950">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-950">
 
       {/* ── Background layer ── */}
       {heroImageUrl ? (
@@ -35,7 +35,7 @@ export default function Hero({
           src={heroImageUrl}
           alt="Naxi Taxi BB hero"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center sm:object-center"
           priority
           sizes="100vw"
         />
@@ -51,7 +51,7 @@ export default function Hero({
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-green-600/15 via-transparent to-transparent" />
 
       {/* ── Content ── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-28 sm:pt-28 sm:pb-32 lg:pt-32 lg:pb-24">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 sm:pt-28 sm:pb-28 lg:pt-32 lg:pb-24">
         <div className="max-w-2xl mx-auto text-center lg:mx-0 lg:text-left">
 
           {/* Badge */}
@@ -126,7 +126,7 @@ export default function Hero({
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — desktop only */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-1 text-gray-400 animate-bounce">
         <span className="text-xs">Skroluj</span>
         <span>↓</span>
