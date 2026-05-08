@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { events } from "@/lib/analytics";
 
@@ -18,6 +19,7 @@ export default function Hero({
   phoneNumber = "060 000 0000",
   viberNumber = "060 000 0000",
   whatsappNumber = "060 000 0000",
+  heroImageUrl,
 }: HeroProps) {
   const phone = phoneNumber!.replace(/\s/g, "");
   const waMessage = encodeURIComponent("Zdravo, potreban mi je taxi. Moja lokacija je: ");
@@ -25,14 +27,46 @@ export default function Hero({
   const viber = viberNumber!.replace(/\s/g, "");
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-950">
-      {/* Background */}
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-950">
+      {/* Background gradient (always present, image sits on top) */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-green-950/20" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-green-600/10 via-transparent to-transparent" />
 
+      {/* Hero image — right half on desktop, full bg on mobile */}
+      <div className="absolute inset-0 lg:left-1/2">
+        {heroImageUrl ? (
+          <>
+            <Image
+              src={heroImageUrl}
+              alt="Naxi Taxi BB"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            {/* Gradient overlay so text stays readable */}
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/80 to-gray-950/30 lg:from-gray-950 lg:via-gray-950/60 lg:to-transparent" />
+          </>
+        ) : (
+          /* Placeholder — visible only when no image is set */
+          <div className="hidden lg:flex h-full items-center justify-center border-2 border-dashed border-gray-700 m-8 rounded-2xl bg-gray-900/50">
+            <div className="text-center px-8">
+              <div className="text-5xl mb-4">🖼️</div>
+              <p className="text-white font-semibold text-lg mb-2">Dodaj hero sliku</p>
+              <p className="text-gray-400 text-sm mb-4 max-w-xs">
+                Postavi sliku u <code className="text-green-500 bg-gray-800 px-1.5 py-0.5 rounded text-xs">/public/images/hero.jpg</code>
+              </p>
+              <p className="text-gray-500 text-xs">
+                Zatim u <code className="text-green-500 bg-gray-800 px-1 py-0.5 rounded">lib/cms/static.ts</code> postavi:<br />
+                <span className="text-gray-400 font-mono text-xs">heroImageUrl: &quot;/images/hero.jpg&quot;</span>
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32 lg:pb-20">
-        <div className="max-w-3xl">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32 lg:pb-20 w-full">
+        <div className="max-w-xl lg:max-w-2xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-green-600/10 border border-green-600/30 rounded-full px-4 py-1.5 mb-6">
             <span className="w-2 h-2 bg-green-600 rounded-full animate-pulse" />
@@ -48,7 +82,7 @@ export default function Hero({
             ))}
           </h1>
 
-          <p className="text-gray-300 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
+          <p className="text-gray-300 text-lg sm:text-xl leading-relaxed mb-8">
             {subtitle}
           </p>
 
