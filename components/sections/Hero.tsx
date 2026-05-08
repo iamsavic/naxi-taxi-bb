@@ -27,71 +27,58 @@ export default function Hero({
   const viber = viberNumber!.replace(/\s/g, "");
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-950">
-      {/* Background gradient (always present, image sits on top) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-green-950/20" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-green-600/10 via-transparent to-transparent" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-950">
 
-      {/* Hero image — right half on desktop, full bg on mobile */}
-      <div className="absolute inset-0 lg:left-1/2">
-        {heroImageUrl ? (
-          <>
-            <Image
-              src={heroImageUrl}
-              alt="Naxi Taxi BB"
-              fill
-              className="object-cover object-center"
-              priority
-            />
-            {/* Gradient overlay so text stays readable */}
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/80 to-gray-950/30 lg:from-gray-950 lg:via-gray-950/60 lg:to-transparent" />
-          </>
-        ) : (
-          /* Placeholder — visible only when no image is set */
-          <div className="hidden lg:flex h-full items-center justify-center border-2 border-dashed border-gray-700 m-8 rounded-2xl bg-gray-900/50">
-            <div className="text-center px-8">
-              <div className="text-5xl mb-4">🖼️</div>
-              <p className="text-white font-semibold text-lg mb-2">Dodaj hero sliku</p>
-              <p className="text-gray-400 text-sm mb-4 max-w-xs">
-                Postavi sliku u <code className="text-green-500 bg-gray-800 px-1.5 py-0.5 rounded text-xs">/public/images/hero.jpg</code>
-              </p>
-              <p className="text-gray-500 text-xs">
-                Zatim u <code className="text-green-500 bg-gray-800 px-1 py-0.5 rounded">lib/cms/static.ts</code> postavi:<br />
-                <span className="text-gray-400 font-mono text-xs">heroImageUrl: &quot;/images/hero.jpg&quot;</span>
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
+      {/* ── Background layer ── */}
+      {heroImageUrl ? (
+        <Image
+          src={heroImageUrl}
+          alt="Naxi Taxi BB hero"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
+        />
+      ) : (
+        /* Fallback gradient when no image */
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-green-950/20" />
+      )}
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32 lg:pb-20 w-full">
-        <div className="max-w-xl lg:max-w-2xl">
+      {/* ── Dark overlay for text readability ── */}
+      <div className="absolute inset-0 bg-black/55 sm:bg-black/50" />
+
+      {/* ── Subtle green tint at top-right ── */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-green-600/15 via-transparent to-transparent" />
+
+      {/* ── Content ── */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-28 sm:pt-28 sm:pb-32 lg:pt-32 lg:pb-24">
+        <div className="max-w-2xl mx-auto text-center lg:mx-0 lg:text-left">
+
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-green-600/10 border border-green-600/30 rounded-full px-4 py-1.5 mb-6">
-            <span className="w-2 h-2 bg-green-600 rounded-full animate-pulse" />
-            <span className="text-green-600 text-sm font-medium">Dostupni 24/7</span>
+          <div className="inline-flex items-center gap-2 bg-green-600/20 border border-green-500/40 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
+            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            <span className="text-green-400 text-sm font-medium">Dostupni 24/7</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5 drop-shadow-lg">
             {title.split("24/7").map((part, i, arr) => (
               <span key={i}>
                 {part}
-                {i < arr.length - 1 && <span className="text-green-600">24/7</span>}
+                {i < arr.length - 1 && <span className="text-green-400">24/7</span>}
               </span>
             ))}
           </h1>
 
-          <p className="text-gray-300 text-lg sm:text-xl leading-relaxed mb-8">
+          <p className="text-gray-200 text-lg sm:text-xl leading-relaxed mb-8 drop-shadow">
             {subtitle}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
             <a
               href={`tel:${phone}`}
               onClick={events.callTaxi}
-              className="flex items-center gap-2 bg-green-600 hover:bg-green-500 text-gray-900 font-bold px-6 py-4 rounded-xl transition-all hover:scale-105 text-base min-w-[160px] justify-center"
+              className="flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold px-6 py-4 rounded-xl transition-all hover:scale-105 text-base shadow-lg shadow-green-900/40 min-w-[160px] justify-center"
             >
               📞 Pozovi taxi
             </a>
@@ -99,9 +86,9 @@ export default function Hero({
             <a
               href={`viber://chat?number=${viber}`}
               onClick={events.clickViber}
-              className="flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold px-6 py-4 rounded-xl transition-all hover:scale-105 text-base min-w-[160px] justify-center"
+              className="flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold px-6 py-4 rounded-xl transition-all hover:scale-105 text-base shadow-lg min-w-[160px] justify-center"
             >
-              💬 Viber poruka
+              💬 Viber
             </a>
 
             <a
@@ -109,7 +96,7 @@ export default function Hero({
               target="_blank"
               rel="noopener noreferrer"
               onClick={events.clickWhatsapp}
-              className="flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-semibold px-6 py-4 rounded-xl transition-all hover:scale-105 text-base min-w-[160px] justify-center"
+              className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-4 rounded-xl transition-all hover:scale-105 text-base shadow-lg min-w-[160px] justify-center"
             >
               📱 WhatsApp
             </a>
@@ -117,22 +104,22 @@ export default function Hero({
             <Link
               href="/cenovnik"
               onClick={events.viewPricing}
-              className="flex items-center gap-2 bg-transparent border-2 border-gray-600 hover:border-green-600 text-gray-300 hover:text-green-600 font-semibold px-6 py-4 rounded-xl transition-all text-base min-w-[160px] justify-center"
+              className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-green-400/60 text-white hover:text-green-300 font-semibold px-6 py-4 rounded-xl transition-all text-base min-w-[160px] justify-center"
             >
               💰 Cenovnik
             </Link>
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-gray-800">
+          <div className="flex flex-wrap gap-6 sm:gap-10 mt-10 pt-8 border-t border-white/15 justify-center lg:justify-start">
             {[
               { value: "10", label: "Vozila" },
               { value: "5★", label: "Ocena" },
               { value: "10+", label: "Godina iskustva" },
             ].map((stat) => (
-              <div key={stat.label}>
-                <div className="text-green-600 text-2xl font-bold">{stat.value}</div>
-                <div className="text-gray-500 text-sm">{stat.label}</div>
+              <div key={stat.label} className="text-center lg:text-left">
+                <div className="text-green-400 text-2xl font-bold drop-shadow">{stat.value}</div>
+                <div className="text-gray-300 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -140,7 +127,7 @@ export default function Hero({
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-1 text-gray-600 animate-bounce">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-1 text-gray-400 animate-bounce">
         <span className="text-xs">Skroluj</span>
         <span>↓</span>
       </div>
