@@ -115,7 +115,7 @@ export default function Hero({
           <div className="flex flex-wrap gap-6 sm:gap-10 mt-10 pt-8 border-t border-white/15 justify-center lg:justify-start">
             {[
               { value: "10", label: "Vozila" },
-              { value: "5★", label: "Ocena" },
+              { value: "4.86★", label: "Ocena" },
               { value: "10+", label: "Godina iskustva" },
             ].map((stat) => (
               <div key={stat.label} className="text-center lg:text-left">
