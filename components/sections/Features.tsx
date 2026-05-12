@@ -6,8 +6,8 @@ const features = [
   },
   {
     icon: "🕐",
-    title: "Dostupni 24/7",
-    description: "Radimo svakog dana, bez praznika i odmora. Uvek tu kad nam trebate.",
+    title: "Radno vreme",
+    description: "Pon–Čet 06–00, Pet–Sub 06–03. Uvek tu kad nam trebate.",
   },
   {
     icon: "👨‍✈️",

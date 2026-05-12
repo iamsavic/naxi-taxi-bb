@@ -9,7 +9,7 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Kontakt",
-  description: "Kontaktirajte Naxi Taxi BB — telefon, Viber, WhatsApp, email i kontakt forma. Dostupni 24/7.",
+  description: "Kontaktirajte Naxi Taxi BB — telefon, Viber, WhatsApp, email i kontakt forma.",
 };
 
 export default async function KontaktPage() {
@@ -25,7 +25,7 @@ export default async function KontaktPage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
               <span className="text-green-600">Kontakt</span>
             </h1>
-            <p className="text-gray-400 text-xl">Dostupni 24/7 — pozovite, pišite ili pošaljite poruku</p>
+            <p className="text-gray-400 text-xl">Pozovite, pišite ili pošaljite poruku</p>
           </div>
         </div>
         <ContactSection settings={settings} />

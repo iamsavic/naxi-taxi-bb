@@ -55,11 +55,6 @@ export default function Hero({
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 sm:pt-28 sm:pb-28 lg:pt-32 lg:pb-24">
         <div className="max-w-2xl mx-auto text-center lg:mx-0 lg:text-left">
 
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-green-600/20 border border-green-500/40 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-green-400 text-sm font-medium">Dostupni 24/7</span>
-          </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5 drop-shadow-lg">
             {title.split("24/7").map((part, i, arr) => (
