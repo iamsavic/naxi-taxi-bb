@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 const tickerItems = [
   "NAXI TAXI BB",
-  "24/7",
   "TAXI DO AERODROMA",
   "POSLOVNI TAXI",
   "PROFESIONALNI VOZAČI",
