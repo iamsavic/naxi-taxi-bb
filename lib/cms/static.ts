@@ -14,7 +14,7 @@ export const staticSiteSettings: SiteSettings = {
   phoneNumber: "031 861 666",
   viberNumber: "+381 60 386 1 666",
   whatsappNumber: "+381 60 386 1 666",
-  email: "info@naxitaxibb.rs",
+  email: "taxinaxibb@gmail.com",
   address: "Račanskih Boraca 39, 31250 Bajina Bašta, Srbija",
   workingHours: "Pon–Čet 06:00–00:00 | Pet–Sub 06:00–03:00 | Ned: neradna",
   workingHoursDetails: [
@@ -40,7 +40,7 @@ export const staticServices: Service[] = [
     slug: "gradska-voznja",
     shortDescription: "Brz i siguran prevoz po gradu. Uvek na vreme, uvek dostupni.",
     fullDescription: null,
-    imageUrl: null,
+    imageUrl: "/images/services/gradska-voznja.avif",
     icon: "🚕",
     ctaText: "Pozovi",
   },
