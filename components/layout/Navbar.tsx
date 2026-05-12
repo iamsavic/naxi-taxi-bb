@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { events } from "@/lib/analytics";
 
@@ -38,11 +39,15 @@ export default function Navbar({ phoneNumber = "060 000 0000" }: NavbarProps) {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <span className="text-2xl">🚕</span>
-            <span className="text-white font-bold text-lg leading-tight">
-              Naxi Taxi<span className="text-green-600"> BB</span>
-            </span>
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="/images/logo.png"
+              alt="Naxi Taxi BB"
+              width={56}
+              height={56}
+              className="rounded-full"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

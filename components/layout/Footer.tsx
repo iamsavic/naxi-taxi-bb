@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { SiteSettings, WorkingHoursEntry } from "@/lib/cms";
 
@@ -34,12 +35,15 @@ export default function Footer({ settings }: FooterProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl">🚕</span>
-              <span className="text-white font-bold text-lg">
-                Naxi Taxi<span className="text-green-600"> BB</span>
-              </span>
-            </div>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/images/logo.png"
+                alt="Naxi Taxi BB"
+                width={72}
+                height={72}
+                className="rounded-full"
+              />
+            </Link>
             <p className="text-sm leading-relaxed mb-4">
               {settings?.tagline || "Pouzdan taxi prevoz 24/7. Brzo, sigurno i profesionalno."}
             </p>
