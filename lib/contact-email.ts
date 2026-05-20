@@ -2,10 +2,6 @@
 export const CONTACT_FORM_EMAIL =
   process.env.CONTACT_EMAIL?.trim() || "taxinaxibb@gmail.com";
 
-/** Resend sender — onboarding@resend.dev until naxitaxibb.rs domain is verified. */
-export function getResendFromEmail(): string {
-  const raw = process.env.RESEND_FROM_EMAIL?.trim();
-  if (!raw) return "Naxi Taxi BB <onboarding@resend.dev>";
-  if (raw.includes("@") && !raw.includes("<")) return `Naxi Taxi BB <${raw}>`;
-  return raw;
-}
+/** Gmail account used to send form emails (defaults to inbox address). */
+export const GMAIL_USER =
+  process.env.GMAIL_USER?.trim() || CONTACT_FORM_EMAIL;

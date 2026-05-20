@@ -8,7 +8,7 @@ Moderan web sajt za taxi službu sa Sanity CMS-om, Auth.js zaštitom i Vercel de
 - **Tailwind CSS** — žuta/crna taxi paleta
 - **Sanity v3** — headless CMS, embedded Studio na `/studio`
 - **Auth.js v5** — zaštita admin panela
-- **Resend** — slanje emailova iz formi
+- **Gmail SMTP (Nodemailer)** — slanje emailova iz formi
 - **Zod** — validacija formi
 - **Framer Motion** — animacije
 - **Vercel** — hosting

@@ -1,5 +1,4 @@
-import { CONTACT_FORM_EMAIL, getResendFromEmail } from "@/lib/contact-email";
-import { resendErrorMessage } from "@/lib/form-errors";
+import { CONTACT_FORM_EMAIL, GMAIL_USER } from "@/lib/contact-email";
 
 type SendFormEmailInput = {
   subject: string;
@@ -7,91 +6,50 @@ type SendFormEmailInput = {
   replyTo?: string;
 };
 
-type SendResult =
-  | { ok: true }
-  | { ok: false; status: number; error: string };
+type SendResult = { ok: true } | { ok: false; status: number; error: string };
 
-async function sendViaGmail({ subject, text, replyTo }: SendFormEmailInput): Promise<SendResult | null> {
+function gmailErrorMessage(message: string): string {
+  const lower = message.toLowerCase();
+  if (lower.includes("invalid login") || lower.includes("username and password")) {
+    return "Gmail App Password nije ispravan. Proverite GMAIL_APP_PASSWORD na Vercel-u.";
+  }
+  if (lower.includes("application-specific password")) {
+    return "Potreban je Gmail App Password (ne obična lozinka).";
+  }
+  return "Email nije poslat. Pokušajte ponovo ili nas pozovite telefonom.";
+}
+
+export async function sendFormEmail(input: SendFormEmailInput): Promise<SendResult> {
   const pass = process.env.GMAIL_APP_PASSWORD?.trim();
-  if (!pass) return null;
+  if (!pass) {
+    return {
+      ok: false,
+      status: 503,
+      error: "Email servis nije podešen. Dodajte GMAIL_APP_PASSWORD na Vercel-u.",
+    };
+  }
 
-  const user = process.env.GMAIL_USER?.trim() || CONTACT_FORM_EMAIL;
+  const replyTo = input.replyTo?.trim() || undefined;
 
   try {
     const nodemailer = await import("nodemailer");
     const transporter = nodemailer.createTransport({
       service: "gmail",
-      auth: { user, pass },
+      auth: { user: GMAIL_USER, pass },
     });
 
     await transporter.sendMail({
-      from: `Naxi Taxi BB <${user}>`,
+      from: `Naxi Taxi BB <${GMAIL_USER}>`,
       to: CONTACT_FORM_EMAIL,
       replyTo: replyTo || undefined,
-      subject,
-      text,
+      subject: input.subject,
+      text: input.text,
     });
 
     return { ok: true };
   } catch (err) {
     console.error("[FORM EMAIL] Gmail:", err);
     const message = err instanceof Error ? err.message : "Gmail slanje nije uspelo.";
-    return { ok: false, status: 502, error: message };
+    return { ok: false, status: 502, error: gmailErrorMessage(message) };
   }
-}
-
-async function sendViaResend({ subject, text, replyTo }: SendFormEmailInput): Promise<SendResult | null> {
-  const apiKey = process.env.RESEND_API_KEY?.trim();
-  if (!apiKey) return null;
-
-  try {
-    const { Resend } = await import("resend");
-    const resend = new Resend(apiKey);
-    const { error } = await resend.emails.send({
-      from: getResendFromEmail(),
-      to: [CONTACT_FORM_EMAIL],
-      replyTo: replyTo || undefined,
-      subject,
-      text,
-    });
-
-    if (error) {
-      console.error("[FORM EMAIL] Resend:", error);
-      return { ok: false, status: 502, error: resendErrorMessage(error.message) };
-    }
-
-    return { ok: true };
-  } catch (err) {
-    console.error("[FORM EMAIL] Resend throw:", err);
-    const message = err instanceof Error ? err.message : "Resend slanje nije uspelo.";
-    return { ok: false, status: 502, error: resendErrorMessage(message) };
-  }
-}
-
-export async function sendFormEmail(input: SendFormEmailInput): Promise<SendResult> {
-  const replyTo = input.replyTo?.trim() || undefined;
-
-  const resendResult = await sendViaResend({ ...input, replyTo });
-  if (resendResult?.ok) return resendResult;
-
-  const gmailResult = await sendViaGmail({ ...input, replyTo });
-  if (gmailResult?.ok) return gmailResult;
-
-  if (resendResult && !resendResult.ok) return resendResult;
-  if (gmailResult && !gmailResult.ok) return gmailResult;
-
-  if (!process.env.RESEND_API_KEY?.trim() && !process.env.GMAIL_APP_PASSWORD?.trim()) {
-    return {
-      ok: false,
-      status: 503,
-      error:
-        "Email nije podešen. Dodajte RESEND_API_KEY ili GMAIL_APP_PASSWORD na Vercel-u.",
-    };
-  }
-
-  return {
-    ok: false,
-    status: 502,
-    error: "Email nije poslat. Proverite Resend/Gmail podešavanja na Vercel-u.",
-  };
 }
