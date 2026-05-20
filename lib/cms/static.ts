@@ -55,7 +55,7 @@ export const staticServices: Service[] = [
     _id: "2",
     title: "Taxi do aerodroma",
     slug: "taxi-do-aerodroma",
-    shortDescription: "Sigurna i punktualna vožnja do aerodroma Nikola Tesla. Zakazivanje unapred.",
+    shortDescription: "Sigurna i tačna vožnja do aerodroma Nikola Tesla. Zakazivanje unapred.",
     fullDescription: null,
     imageUrl: "/images/services/taxi-aerodrom.avif",
     icon: "✈️",

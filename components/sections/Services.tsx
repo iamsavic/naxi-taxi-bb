@@ -4,7 +4,7 @@ import type { Service } from "@/lib/cms";
 
 const fallbackServices: Service[] = [
   { _id: "1", title: "Gradska taxi vožnja", slug: "gradska-voznja", shortDescription: "Brz i siguran prevoz po gradu. Uvek na vreme, uvek dostupni.", imageUrl: null, icon: "🚕", ctaText: "Pozovi", fullDescription: null },
-  { _id: "2", title: "Taxi do aerodroma", slug: "taxi-do-aerodroma", shortDescription: "Sigurna i punktualna vožnja do aerodroma. Zakazivanje unapred.", imageUrl: null, icon: "✈️", ctaText: "Zakaži", fullDescription: null },
+  { _id: "2", title: "Taxi do aerodroma", slug: "taxi-do-aerodroma", shortDescription: "Sigurna i tačna vožnja do aerodroma. Zakazivanje unapred.", imageUrl: null, icon: "✈️", ctaText: "Zakaži", fullDescription: null },
   { _id: "3", title: "Zakazivanje unapred", slug: "zakazivanje", shortDescription: "Zakažite vožnju dan, nedelju ili mesec ranije. Bez stresa.", imageUrl: null, icon: "📅", ctaText: "Zakaži", fullDescription: null },
   { _id: "4", title: "Poslovni taxi", slug: "poslovni-taxi", shortDescription: "Organizovan prevoz za firme, hotele i restorane.", imageUrl: null, icon: "🏢", ctaText: "Saznaj više", fullDescription: null },
   { _id: "5", title: "Vozilo sa vozačem", slug: "vozilo-sa-vozacem", shortDescription: "Premium usluga sa profesionalnim vozačem za posebne prilike.", imageUrl: null, icon: "🎩", ctaText: "Saznaj više", fullDescription: null },
