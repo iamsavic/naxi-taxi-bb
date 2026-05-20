@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { CONTACT_FORM_EMAIL } from "@/lib/contact-email";
 import { contactSchema } from "@/lib/validations";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
@@ -27,7 +28,7 @@ export async function POST(request: NextRequest) {
 
     await resend.emails.send({
       from: "Naxi Taxi BB <noreply@naxitaxibb.rs>",
-      to: process.env.CONTACT_EMAIL!,
+      to: CONTACT_FORM_EMAIL,
       subject: `Nova poruka od ${data.name}`,
       text: `Ime: ${data.name}\nTelefon: ${data.phone}\nEmail: ${data.email || "/"}\n\nPoruka:\n${data.message}`,
     });
