@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { CONTACT_FORM_EMAIL, RESEND_FROM_EMAIL } from "@/lib/contact-email";
+import { sendFormEmail } from "@/lib/send-form-email";
 import { businessSchema } from "@/lib/validations";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
@@ -17,15 +17,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true });
     }
 
-    const { Resend } = await import("resend");
-    const resend = new Resend(process.env.RESEND_API_KEY);
-
-    await resend.emails.send({
-      from: RESEND_FROM_EMAIL,
-      to: CONTACT_FORM_EMAIL,
+    const result = await sendFormEmail({
       subject: `Poslovni upit — ${data.company}`,
       text: `Firma: ${data.company}\nKontakt: ${data.contactPerson}\nTelefon: ${data.phone}\nEmail: ${data.email}\n\nPoruka:\n${data.message}`,
     });
+
+    if (!result.ok) {
+      return NextResponse.json({ error: result.error }, { status: result.status });
+    }
 
     return NextResponse.json({ success: true });
   } catch {

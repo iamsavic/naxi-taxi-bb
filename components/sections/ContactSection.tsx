@@ -12,6 +12,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [formError, setFormError] = useState("");
 
   const phone = settings?.phoneNumber || "060 000 0000";
   const viber = settings?.viberNumber || "060 000 0000";
@@ -25,6 +26,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
     e.preventDefault();
     setStatus("loading");
     setErrors({});
+    setFormError("");
 
     try {
       const res = await fetch("/api/contact", {
@@ -40,6 +42,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
         const data = await res.json();
         setStatus("error");
         if (data.errors) setErrors(data.errors);
+        else if (data.error) setFormError(data.error);
       }
     } catch {
       setStatus("error");
@@ -166,7 +169,8 @@ export default function ContactSection({ settings }: ContactSectionProps) {
                   <label className="block text-sm font-medium text-gray-300 mb-1.5">Poruka *</label>
                   <textarea
                     rows={4}
-                    placeholder="Napišite vašu poruku..."
+                    minLength={10}
+                    placeholder="Napišite vašu poruku (najmanje 10 karaktera)..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent transition text-sm resize-none"
@@ -174,8 +178,8 @@ export default function ContactSection({ settings }: ContactSectionProps) {
                   {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
                 </div>
 
-                {status === "error" && !Object.keys(errors).length && (
-                  <p className="text-red-400 text-sm">Greška pri slanju. Pokušajte ponovo.</p>
+                {status === "error" && (formError || !Object.keys(errors).length) && (
+                  <p className="text-red-400 text-sm">{formError || "Greška pri slanju. Pokušajte ponovo."}</p>
                 )}
 
                 <button
