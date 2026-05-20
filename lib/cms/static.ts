@@ -22,7 +22,8 @@ export const staticSiteSettings: SiteSettings = {
     { days: "Petak – Subota", hours: "06:00 – 03:00" },
     { days: "Nedelja", hours: "Neradna", closed: true },
   ],
-  googleMapsUrl: "https://maps.app.goo.gl/MxTHpqyUSwVn99C67",
+  googleMapsUrl:
+    "https://maps.google.com/maps?q=Ra%C4%8Danskih+Boraca+39%2C+31250+Bajina+Ba%C5%A1ta%2C+Srbija&hl=sr&z=16&output=embed",
   heroTitle: "Naxi Taxi Bajina Bašta — Brz i Pouzdan",
   heroSubtitle: "Pozovite nas ili nas kontaktirajte putem Vibera i WhatsApp-a.",
   heroImageUrl: "/images/hero.avif",

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { events } from "@/lib/analytics";
 import type { SiteSettings, WorkingHoursEntry } from "@/lib/cms";
+import { getGoogleMapsEmbedUrl } from "@/lib/google-maps";
 
 interface ContactSectionProps {
   settings?: SiteSettings | null;
@@ -21,6 +22,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
   const address = settings?.address || "Beograd, Srbija";
   const workingHoursDetails: WorkingHoursEntry[] = settings?.workingHoursDetails || [];
   const waMessage = encodeURIComponent("Zdravo, potreban mi je taxi. Moja lokacija je: ");
+  const mapEmbedUrl = getGoogleMapsEmbedUrl(settings?.googleMapsUrl, settings?.address ?? address);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -133,10 +135,10 @@ export default function ContactSection({ settings }: ContactSectionProps) {
             </div>
 
             {/* Map placeholder */}
-            {settings?.googleMapsUrl ? (
+            {mapEmbedUrl ? (
               <div className="rounded-xl overflow-hidden h-64 border border-gray-700">
                 <iframe
-                  src={settings.googleMapsUrl}
+                  src={mapEmbedUrl}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
