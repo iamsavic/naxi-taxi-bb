@@ -22,7 +22,11 @@ export default function ContactSection({ settings }: ContactSectionProps) {
   const address = settings?.address || "Beograd, Srbija";
   const workingHoursDetails: WorkingHoursEntry[] = settings?.workingHoursDetails || [];
   const waMessage = encodeURIComponent("Zdravo, potreban mi je taxi. Moja lokacija je: ");
-  const mapEmbedUrl = getGoogleMapsEmbedUrl(settings?.googleMapsUrl, settings?.address ?? address);
+  const mapEmbedUrl = getGoogleMapsEmbedUrl(
+    settings?.googleMapsUrl,
+    settings?.address ?? address,
+    settings?.mapPin
+  );
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();

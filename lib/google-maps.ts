@@ -1,8 +1,28 @@
+export type MapPin = {
+  lat: number;
+  lng: number;
+  label?: string;
+  zoom?: number;
+};
+
+/** Embed URL with a visible red pin (label@coordinates). */
+export function buildPinnedMapEmbedUrl(pin: MapPin): string {
+  const label = pin.label?.trim();
+  const q = label ? `${label}@${pin.lat},${pin.lng}` : `${pin.lat},${pin.lng}`;
+  const z = pin.zoom ?? 17;
+  return `https://maps.google.com/maps?q=${encodeURIComponent(q)}&hl=sr&z=${z}&output=embed`;
+}
+
 /** Share/short links cannot be used in iframes — build a proper embed URL instead. */
 export function getGoogleMapsEmbedUrl(
   mapsUrl?: string | null,
-  address?: string | null
+  address?: string | null,
+  pin?: MapPin | null
 ): string | null {
+  if (pin) {
+    return buildPinnedMapEmbedUrl(pin);
+  }
+
   const url = mapsUrl?.trim() ?? "";
   const addr = address?.trim() ?? "";
 

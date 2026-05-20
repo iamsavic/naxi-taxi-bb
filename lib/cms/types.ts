@@ -15,6 +15,13 @@ export interface SiteSettings {
   workingHours: string;
   workingHoursDetails?: WorkingHoursEntry[];
   googleMapsUrl: string;
+  /** Pin on the contact map (lat/lng from Google Maps embed). */
+  mapPin?: {
+    lat: number;
+    lng: number;
+    label?: string;
+    zoom?: number;
+  };
   heroTitle: string;
   heroSubtitle: string;
   heroImageUrl: string | null;

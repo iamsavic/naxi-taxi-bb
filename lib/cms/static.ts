@@ -24,6 +24,12 @@ export const staticSiteSettings: SiteSettings = {
   ],
   googleMapsUrl:
     "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1435.555250389734!2d19.56550304776396!3d43.97776432894505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2srs!4v1779268050157!5m2!1sen!2srs",
+  mapPin: {
+    lat: 43.97776432894505,
+    lng: 19.56550304776396,
+    label: "Naxi Taxi BB",
+    zoom: 17,
+  },
   heroTitle: "Naxi Taxi Bajina Bašta — Brz i Pouzdan",
   heroSubtitle: "Pozovite nas ili nas kontaktirajte putem Vibera i WhatsApp-a.",
   heroImageUrl: "/images/hero.avif",
