@@ -28,24 +28,46 @@ export default function ContactSection({ settings }: ContactSectionProps) {
     setErrors({});
     setFormError("");
 
+    const clientErrors: Record<string, string> = {};
+    if (formData.name.trim().length < 2) clientErrors.name = "Ime mora imati najmanje 2 karaktera.";
+    if (formData.phone.trim().length < 6) clientErrors.phone = "Unesite validan broj telefona.";
+    if (formData.message.trim().length < 10) {
+      clientErrors.message = "Poruka mora imati najmanje 10 karaktera.";
+    }
+    if (Object.keys(clientErrors).length > 0) {
+      setErrors(clientErrors);
+      setStatus("error");
+      return;
+    }
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
+      let data: { errors?: Record<string, string>; error?: string } = {};
+      try {
+        data = await res.json();
+      } catch {
+        setFormError(`Server greška (${res.status}). Pokušajte ponovo.`);
+        setStatus("error");
+        return;
+      }
+
       if (res.ok) {
         setStatus("success");
         events.submitContactForm();
         setFormData({ name: "", phone: "", email: "", message: "" });
       } else {
-        const data = await res.json();
         setStatus("error");
-        if (data.errors) setErrors(data.errors);
-        else if (data.error) setFormError(data.error);
+        if (data.errors && Object.keys(data.errors).length > 0) setErrors(data.errors);
+        else setFormError(data.error || `Greška pri slanju (${res.status}). Pokušajte ponovo.`);
       }
     } catch {
       setStatus("error");
+      setFormError("Mrežna greška. Proverite internet i pokušajte ponovo.");
     }
   }
 
