@@ -14,7 +14,7 @@ const benefits = [
   { icon: "🧳", text: "Prevoz prtljaga uključen" },
   { icon: "✈️", text: "Pratimo dolazak vašeg leta" },
   { icon: "📞", text: "Vozač dostupan na telefonu" },
-  { icon: "💳", text: "Plaćanje gotovinom ili karticom" },
+  { icon: "💵", text: "Plaćanje gotovinom" },
   { icon: "🛡️", text: "Licencirani vozači sa iskustvom" },
 ];
 
