@@ -156,7 +156,7 @@ export const staticFaqItems: FaqItem[] = [
   {
     _id: "3",
     question: "Kolika je cena vožnje do aerodroma?",
-    answer: "Vožnja do aerodroma Nikola Tesla ima fiksnu cenu od 2500 RSD, bez obzira na saobraćaj.",
+    answer: "Cena transfera do aerodroma zavisi od više faktora, poput termina rezervacije, dana realizacije vožnje (radni dan ili vikend), kao i same lokacije polaska. Svakoj vožnji pristupamo individualno, kako bismo pronašli najbolje i najpovoljnije rešenje za naše klijente. Za tačnu cenu i dogovor oko transfera, kontaktirajte nas putem telefona, vibera, whatsApp-a. Sve je stvar dogovora i trudićemo se da izađemo u susret vašim potrebama.",
     category: "Cene",
   },
   {
