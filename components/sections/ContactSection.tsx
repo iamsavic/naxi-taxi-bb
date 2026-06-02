@@ -17,11 +17,9 @@ export default function ContactSection({ settings }: ContactSectionProps) {
 
   const phone = settings?.phoneNumber || "060 000 0000";
   const viber = settings?.viberNumber || "060 000 0000";
-  const whatsapp = settings?.whatsappNumber || "060 000 0000";
   const email = settings?.email || "info@naxitaxibb.rs";
   const address = settings?.address || "Beograd, Srbija";
   const workingHoursDetails: WorkingHoursEntry[] = settings?.workingHoursDetails || [];
-  const waMessage = encodeURIComponent("Zdravo, potreban mi je taxi. Moja lokacija je: ");
   const mapEmbedUrl = getGoogleMapsEmbedUrl(
     settings?.googleMapsUrl,
     settings?.address ?? address,
@@ -84,7 +82,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Kontaktirajte <span className="text-green-600">nas</span>
           </h2>
-          <p className="text-gray-400 text-lg">Dostupni smo 24/7 za sve vaše potrebe</p>
+          <p className="text-gray-400 text-lg">Uvek tu kada Vam trebamo</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -93,8 +91,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { icon: "📞", label: "Telefon", value: phone, href: `tel:${phone.replace(/\s/g, "")}`, onClick: events.callTaxi },
-                { icon: "💬", label: "Viber", value: viber, href: `viber://chat?number=${viber.replace(/\s/g, "")}`, onClick: events.clickViber },
-                { icon: "📱", label: "WhatsApp", value: whatsapp, href: `https://wa.me/${whatsapp.replace(/[\s+]/g, "")}?text=${waMessage}`, onClick: events.clickWhatsapp },
+                { icon: "💬", label: "Viber", value: viber, href: `viber://call?number=${viber.replace(/\s/g, "")}`, onClick: events.clickViber },
                 { icon: "✉️", label: "Email", value: email, href: `mailto:${email}`, onClick: () => {} },
                 { icon: "📍", label: "Adresa", value: address, href: undefined, onClick: () => {} },
               ].map((item) => (

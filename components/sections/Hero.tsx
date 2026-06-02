@@ -22,8 +22,6 @@ export default function Hero({
   heroImageUrl,
 }: HeroProps) {
   const phone = phoneNumber!.replace(/\s/g, "");
-  const waMessage = encodeURIComponent("Zdravo, potreban mi je taxi. Moja lokacija je: ");
-  const whatsapp = whatsappNumber!.replace(/[\s+]/g, "");
   const viber = viberNumber!.replace(/\s/g, "");
 
   return (
@@ -80,21 +78,11 @@ export default function Hero({
             </a>
 
             <a
-              href={`viber://chat?number=${viber}`}
+              href={`viber://call?number=${viber}`}
               onClick={events.clickViber}
               className="flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold px-6 py-4 rounded-xl transition-all hover:scale-105 text-base shadow-lg min-w-[160px] justify-center"
             >
               💬 Viber
-            </a>
-
-            <a
-              href={`https://wa.me/${whatsapp}?text=${waMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={events.clickWhatsapp}
-              className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-4 rounded-xl transition-all hover:scale-105 text-base shadow-lg min-w-[160px] justify-center"
-            >
-              📱 WhatsApp
             </a>
 
             <Link
