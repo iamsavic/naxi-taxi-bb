@@ -7,7 +7,7 @@ const features = [
   {
     icon: "🕐",
     title: "Radno vreme",
-    description: "Pon–Čet 06–00, Pet–Sub 06–03. Uvek tu kad nam trebate.",
+    description: "Pon–Čet 06–00, Pet–Sub 06–03. Uvek tu kad Vam trebamo.",
   },
   {
     icon: "👨‍✈️",
