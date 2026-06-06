@@ -23,9 +23,11 @@ interface FooterProps {
 export default function Footer({ settings }: FooterProps) {
   const phone = settings?.phoneNumber || "060 000 0000";
   const viber = settings?.viberNumber || "060 000 0000";
+  const whatsapp = settings?.whatsappNumber || "060 000 0000";
   const email = settings?.email || "info@naxitaxibb.rs";
   const address = settings?.address || "Beograd, Srbija";
   const workingHoursDetails: WorkingHoursEntry[] = settings?.workingHoursDetails || [];
+  const waMessage = encodeURIComponent("Zdravo, potreban mi je taxi. Moja lokacija je: ");
 
   return (
     <footer className="bg-gray-950 text-gray-400 border-t border-gray-800">
@@ -93,6 +95,11 @@ export default function Footer({ settings }: FooterProps) {
               <li>
                 <a href={`viber://call?number=${viber.replace(/\s/g, "")}`} className="flex items-center gap-2 hover:text-purple-400 transition-colors">
                   <span>💬</span> Viber: {viber}
+                </a>
+              </li>
+              <li>
+                <a href={`https://wa.me/${whatsapp.replace(/[\s+]/g, "")}?text=${waMessage}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-green-400 transition-colors">
+                  <span>📱</span> WhatsApp: {whatsapp}
                 </a>
               </li>
               <li>

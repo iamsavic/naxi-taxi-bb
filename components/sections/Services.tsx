@@ -7,7 +7,7 @@ const fallbackServices: Service[] = [
   { _id: "2", title: "Taxi do aerodroma", slug: "taxi-do-aerodroma", shortDescription: "Sigurna i tačna vožnja do aerodroma. Zakazivanje unapred.", imageUrl: null, icon: "✈️", ctaText: "Zakaži", fullDescription: null },
   { _id: "3", title: "Zakazivanje unapred", slug: "zakazivanje", shortDescription: "Zakažite vožnju dan, nedelju ili mesec ranije. Bez stresa.", imageUrl: null, icon: "📅", ctaText: "Zakaži", fullDescription: null },
   { _id: "4", title: "Poslovni taxi", slug: "poslovni-taxi", shortDescription: "Organizovan prevoz za firme, hotele i restorane.", imageUrl: null, icon: "🏢", ctaText: "Saznaj više", fullDescription: null },
-  { _id: "5", title: "Vozilo sa vozačem", slug: "vozilo-sa-vozacem", shortDescription: "Premium usluga sa profesionalnim vozačem za posebne prilike.", imageUrl: null, icon: "🎩", ctaText: "Saznaj više", fullDescription: null },
+  { _id: "5", title: "Vozilo sa vozačem", slug: "vozilo-sa-vozacem", shortDescription: "Premium usluga sa profesionalnim vozačem za posebne prilike i svečanosti. Usluga se vrsi ne brendiranim vozilom.", imageUrl: null, icon: "🎩", ctaText: "Saznaj više", fullDescription: null },
   { _id: "6", title: "Turističko razgledanje", slug: "turisticko-razgledanje", shortDescription: "Upoznajte grad uz lokalnog vodiča i udoban taxi.", imageUrl: null, icon: "🗺️", ctaText: "Saznaj više", fullDescription: null },
 ];
 

@@ -17,9 +17,11 @@ export default function ContactSection({ settings }: ContactSectionProps) {
 
   const phone = settings?.phoneNumber || "060 000 0000";
   const viber = settings?.viberNumber || "060 000 0000";
+  const whatsapp = settings?.whatsappNumber || "060 000 0000";
   const email = settings?.email || "info@naxitaxibb.rs";
   const address = settings?.address || "Beograd, Srbija";
   const workingHoursDetails: WorkingHoursEntry[] = settings?.workingHoursDetails || [];
+  const waMessage = encodeURIComponent("Zdravo, potreban mi je taxi. Moja lokacija je: ");
   const mapEmbedUrl = getGoogleMapsEmbedUrl(
     settings?.googleMapsUrl,
     settings?.address ?? address,
@@ -92,6 +94,7 @@ export default function ContactSection({ settings }: ContactSectionProps) {
               {[
                 { icon: "📞", label: "Telefon", value: phone, href: `tel:${phone.replace(/\s/g, "")}`, onClick: events.callTaxi },
                 { icon: "💬", label: "Viber", value: viber, href: `viber://call?number=${viber.replace(/\s/g, "")}`, onClick: events.clickViber },
+                { icon: "📱", label: "WhatsApp", value: whatsapp, href: `https://wa.me/${whatsapp.replace(/[\s+]/g, "")}?text=${waMessage}`, onClick: events.clickWhatsapp },
                 { icon: "✉️", label: "Email", value: email, href: `mailto:${email}`, onClick: () => {} },
                 { icon: "📍", label: "Adresa", value: address, href: undefined, onClick: () => {} },
               ].map((item) => (

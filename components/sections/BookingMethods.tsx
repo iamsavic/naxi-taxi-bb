@@ -15,6 +15,8 @@ export default function BookingMethods({
 }: BookingMethodsProps) {
   const phone = phoneNumber!.replace(/\s/g, "");
   const viber = viberNumber!.replace(/\s/g, "");
+  const whatsapp = whatsappNumber!.replace(/[\s+]/g, "");
+  const waMessage = encodeURIComponent("Zdravo, potreban mi je taxi. Moja lokacija je: ");
 
   const methods = [
     {
@@ -35,17 +37,28 @@ export default function BookingMethods({
     },
     {
       icon: "💬",
-      title: "Viber pozivom",
+      title: "Viber / WhatsApp",
       color: "purple",
-      description: "Pozovite nas putem Vibera — brzo i jednostavno.",
+      description: "Pozovite nas putem Vibera ili kontaktirajte nas putem WhatsApp-a.",
       action: (
-        <a
-          href={`viber://call?number=${viber}`}
-          onClick={events.clickViber}
-          className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold px-5 py-3 rounded-xl transition-all"
-        >
-          💬 Pozovi na Viber
-        </a>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={`viber://call?number=${viber}`}
+            onClick={events.clickViber}
+            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold px-5 py-3 rounded-xl transition-all"
+          >
+            💬 Viber
+          </a>
+          <a
+            href={`https://wa.me/${whatsapp}?text=${waMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={events.clickWhatsapp}
+            className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-semibold px-5 py-3 rounded-xl transition-all"
+          >
+            📱 WhatsApp
+          </a>
+        </div>
       ),
     },
     {
