@@ -85,7 +85,7 @@ export const staticServices: Service[] = [
     _id: "5",
     title: "Vozilo sa vozačem",
     slug: "vozilo-sa-vozacem",
-    shortDescription: "Premium usluga sa profesionalnim vozačem za posebne prilike i svečanosti. Usluga se vrsi ne brendiranim vozilom.",
+    shortDescription: "Premium usluga sa profesionalnim vozačem za posebne prilike i svečanosti. Usluga se vrši ne brendiranim vozilom.",
     fullDescription: null,
     imageUrl: "/images/services/vozac1.png",
     icon: "🎩",
