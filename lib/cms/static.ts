@@ -31,7 +31,7 @@ export const staticSiteSettings: SiteSettings = {
     zoom: 17,
   },
   heroTitle: "Naxi Taxi Bajina Bašta — Brz i Pouzdan",
-  heroSubtitle: "Pozovite nas ili nas kontaktirajte putem Vibera i WhatsApp-a.",
+  heroSubtitle: "Pozovite nas — brz i pouzdan taxi uvek na vašoj usluzi.",
   heroImageUrl: "/images/hero.avif",
   logoUrl: null,
   socialLinks: {
