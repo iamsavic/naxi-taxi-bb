@@ -150,7 +150,7 @@ export const staticFaqItems: FaqItem[] = [
   {
     _id: "2",
     question: "Kada radite?",
-    answer: "Radimo ponedeljkom do četvrtka od 06:00 do 00:00, petkom i subotom od 06:00 do 03:00. Nedeljom ne radimo.",
+    answer: "Radimo od ponedeljka do četvrtka od 06:00 do 00:00, petkom i subotom od 06:00 do 03:00. Nedeljom ne radimo.",
     category: "Opšte",
   },
   {
