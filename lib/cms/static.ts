@@ -136,7 +136,32 @@ export const staticPricingTariffs: PricingTariff[] = [
   },
 ];
 
-export const staticGalleryImages: GalleryImage[] = [];
+export const staticGalleryImages: GalleryImage[] = [
+  {
+    _id: "g1",
+    imageUrl: "/gallery/magnific_devojka-sa-img1-ulazi-u-t_Vd97il8MMU.avif",
+    altText: "Naxi Taxi BB usluga",
+    category: "vozila",
+  },
+  {
+    _id: "g2",
+    imageUrl: "/gallery/magnific_devojka-sa-img2-elegantno_gJdw5yqSXO.avif",
+    altText: "Naxi Taxi BB usluga",
+    category: "vozila",
+  },
+  {
+    _id: "g3",
+    imageUrl: "/gallery/magnific_devojka-sa-img3-elegantno_VdLpcsSMMU.avif",
+    altText: "Naxi Taxi BB usluga",
+    category: "vozila",
+  },
+  {
+    _id: "g4",
+    imageUrl: "/gallery/magnific_devojka-sa-img3-ulazi-u-t_l7eUlDtgv9.avif",
+    altText: "Naxi Taxi BB usluga",
+    category: "vozila",
+  },
+];
 
 export const staticPartners: Partner[] = [];
 
