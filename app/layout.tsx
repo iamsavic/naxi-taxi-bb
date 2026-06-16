@@ -11,7 +11,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Naxi Taxi BB — Taxi prevoz 24/7",
+    default: "Naxi Taxi BB — Brz i pouzdan taxi",
     template: "%s | Naxi Taxi BB",
   },
   description:
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     locale: "sr_RS",
     url: siteUrl,
     siteName: "Naxi Taxi BB",
-    title: "Naxi Taxi BB — Taxi prevoz 24/7",
+    title: "Naxi Taxi BB — Brz i pouzdan taxi",
     description: "Brz i pouzdan taxi — uvek na vašoj usluzi. Pozovite nas.",
     images: [{ url: `${siteUrl}/og-image.jpg`, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Naxi Taxi BB — Taxi prevoz 24/7",
+    title: "Naxi Taxi BB — Brz i pouzdan taxi",
     description: "Brz i pouzdan taxi — uvek na vašoj usluzi.",
   },
   robots: {
